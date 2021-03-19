@@ -1,0 +1,46 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[[source]]
+url = "https://${GITLAB_USERNAME}:${GITLAB_TOKEN}@git.int.gigaclear.net/api/v4/projects/428/packages/pypi/simple"
+verify_ssl = true
+name = "gitlab"
+
+[dev-packages]
+aiohttp-devtools = "*"
+bandit = "*"
+black = "==20.8b1"
+flake8 = "*"
+mypy = "*"
+pytest = "*"
+pytest-aiohttp = "*"
+pytest-cov = "*"
+safety = "*"
+pytest-alembic = "*"
+
+[packages]
+dataclasses-jsonschema = {version = ">=1.4.1",extras = ["fast-validation"]}
+pyyaml = "*"
+connexion = {extras = ["swagger-ui"],version = "*"}
+dataclass-envloader = "*"
+aiohttp = {"version" = "==3.6.3"}
+aiohttp-jinja2 = "*"
+uvloop = {version = "*",sys_platform = "!= 'win32'"}
+aiohttp-cors = "*"
+asyncpg = "*"
+alembic = "*"
+result = "*"
+gino = "*"
+psycopg2-binary = "*"
+typing-extensions = "*"
+geoalchemy2 = "*"
+shapely = "*"
+owslib = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = false

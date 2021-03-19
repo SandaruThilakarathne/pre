@@ -1,0 +1,37 @@
+openapi: 3.0.0
+
+info:
+  title: PIA Tracker
+  version: "1.0.0"
+paths:
+  /healthz/live:
+    get:
+      operationId: healthz_live
+      summary: Liveness check
+      tags:
+        - healthcheck
+      responses:
+        "200": {description: Success}
+        "500": {description: Failure}
+  /healthz/ready:
+    get:
+      operationId: healthz_ready
+      summary: Readiness check
+      tags:
+        - healthcheck
+      responses:
+        "200": {description: Success}
+        "500": {description: Failure}
+components:
+  schemas: {}
+  requestBodies:
+    UpdateStatus:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+            required:
+              - status
